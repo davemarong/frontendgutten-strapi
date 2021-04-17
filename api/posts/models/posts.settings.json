@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "name": "Posts",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "unique": true
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "blogimage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "categories": {
+      "collection": "categories",
+      "via": "blogs"
+    },
+    "description": {
+      "type": "text",
+      "unique": true
+    },
+    "date": {
+      "type": "date"
+    },
+    "howLongToRead": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "default": "Dave Kjell Marong"
+    }
+  }
+}
