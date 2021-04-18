@@ -18,6 +18,7 @@ module.exports = ({ env }) => {
           },
           options: {
             ssl: {
+              require: true,
               rejectUnauthorized: false,
             },
           },
